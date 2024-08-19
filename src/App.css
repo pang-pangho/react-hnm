@@ -1,19 +1,26 @@
 body {
   background-color: #f2f2f2;
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
 }
+
 .login-button {
   display: flex;
-  justify-content: flex-end;
+  justify-content: right; /* 좌우로 정렬 */
+  align-items: center; /* 같은 선상에 정렬 */
   cursor: pointer;
-  padding-top: 1.25rem;
-  padding-right: 2.5rem;
+  padding: 1.25rem 2.5rem; /* 패딩을 추가해 배치 조정 */
 }
+
 .auth {
+  display: flex;
+  justify-content: right;
+  align-items: center;
   margin-left: 15px;
 }
+
 .nav-section {
-  display: flex;
-  justify-content: center;
+  display: none; /* 로고를 login-button으로 이동했으므로 숨김 */
 }
 
 .menu-area {
@@ -21,13 +28,7 @@ body {
   align-items: center;
   padding: 0 20px;
 }
-.search-box {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  position: absolute;
-  right: 0;
-}
+
 .menu-container {
   display: flex;
   flex-grow: 1;
@@ -85,56 +86,10 @@ input {
   color: black !important;
 }
 
-.dropdown-menu {
-  border: 1px solid black !important;
-  background-color: white !important;
-}
-
-.dropdown-item {
-  color: black !important;
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-}
-
 .mobile {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .menu-list.pc {
-    display: none;
-  }
-
-  .dropdown-toggle.menu {
-    display: block !important;
-  }
-
-  .mobile {
-    display: block;
-  }
-
-  .menu-area {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-  }
-
-  .menu-container {
-    order: 1;
-    display: flex;
-    justify-content: left;
-  }
-
-  .product-img {
-    padding-top: 15px;
-    height: 35rem;
-    display: flex;
-    justify-content: start;
-  }
-}
 .span-container {
   display: flex;
   align-items: center;
@@ -146,4 +101,95 @@ input {
 span:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* 왼쪽에서 열리도록 설정 */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: left 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0; /* 왼쪽에서 열리게 설정 */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.sidebar-menu {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.sidebar-menu li:hover {
+  background-color: #f2f2f2;
+}
+
+.search-box {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .login-button {
+    display: flex;
+    justify-content: space-between; /* 좌우로 정렬 */
+    align-items: center; /* 같은 선상에 정렬 */
+    cursor: pointer;
+    padding: 1.25rem 2.5rem; /* 패딩을 추가해 배치 조정 */
+  }
+  .menu-list.pc {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .menu-area {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .menu-container {
+    order: 1;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .search-box {
+    display: none;
+  }
+
+  .product-img {
+    padding-top: 15px;
+    height: 35rem;
+    display: flex;
+    justify-content: start;
+  }
+}
+.logo {
+  display: flex;
+  justify-content: center;
 }
