@@ -10,29 +10,33 @@ const ProductAll = ({ authenticate }) => {
 
   const getProducts = async () => {
     try {
-      let url = `http://localhost:3004/products`;
-      let response = await fetch(url);
+      // searchQuery를 가져와 URL에 포함
+      const searchQuery = query.get("q") || "";
+      const url = `https://my-json-server.typicode.com/pang-pangho/react-hnm/products?q=${searchQuery}`;
+      const response = await fetch(url);
       if (response.ok) {
-        let data = await response.json();
+        const data = await response.json();
         setProductList(data);
       } else {
-        console.error("실패 :", response.status);
+        console.error("Failed to fetch products:", response.status);
       }
     } catch (error) {
-      console.error("에러 :", error);
+      console.error("Error fetching products:", error);
     }
   };
 
+  // 쿼리 파라미터 변경 시마다 제품 목록을 새로 요청
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [query]);
 
+  // 제품 목록을 필터링하여 filteredProducts 상태 업데이트
   useEffect(() => {
     const filtered = productList.filter((product) =>
       product.title.toLowerCase().includes((query.get("q") || "").toLowerCase())
     );
     setFilteredProducts(filtered);
-  }, [query, productList]);
+  }, [productList, query]);
 
   return (
     <div>
