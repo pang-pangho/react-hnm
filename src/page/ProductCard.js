@@ -12,7 +12,9 @@ const ProductCard = ({ item, authenticate }) => {
   };
   return (
     <div className="item-container" onClick={gotoDetail}>
-      <img className="item-img" width={500} src={item?.img} alt="" />
+      <div className="img-container">
+        <img className="item-img" width={500} src={item?.img} alt="" />
+      </div>
       <div>{item?.choice == true ? "concious choice" : ""}</div>
       <div>{item?.title}</div>
       <div>{item?.price}</div>

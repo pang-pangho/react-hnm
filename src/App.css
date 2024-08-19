@@ -6,10 +6,10 @@ body {
 
 .login-button {
   display: flex;
-  justify-content: right; /* 좌우로 정렬 */
-  align-items: center; /* 같은 선상에 정렬 */
+  justify-content: right;
+  align-items: center;
   cursor: pointer;
-  padding: 1.25rem 2.5rem; /* 패딩을 추가해 배치 조정 */
+  padding: 1.25rem 2.5rem;
 }
 
 .auth {
@@ -20,7 +20,7 @@ body {
 }
 
 .nav-section {
-  display: none; /* 로고를 login-button으로 이동했으므로 숨김 */
+  display: none;
 }
 
 .menu-area {
@@ -106,7 +106,7 @@ span:hover {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -250px; /* 왼쪽에서 열리도록 설정 */
+  left: -250px;
   width: 250px;
   height: 100%;
   background-color: #fff;
@@ -116,7 +116,7 @@ span:hover {
 }
 
 .sidebar.open {
-  left: 0; /* 왼쪽에서 열리게 설정 */
+  left: 0;
 }
 
 .sidebar-header {
@@ -148,12 +148,15 @@ span:hover {
 }
 
 @media (max-width: 768px) {
+  .img-container img {
+    width: 350px;
+  }
   .login-button {
     display: flex;
-    justify-content: space-between; /* 좌우로 정렬 */
-    align-items: center; /* 같은 선상에 정렬 */
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
-    padding: 1.25rem 2.5rem; /* 패딩을 추가해 배치 조정 */
+    padding: 1.25rem 2.5rem;
   }
   .menu-list.pc {
     display: none;
