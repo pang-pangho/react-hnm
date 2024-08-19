@@ -1,11 +1,11 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import ProductDetail from "./page/ProductDetail";
 import Navbar from "./component/Navbar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 function App() {
   //1. 전체상품페이지, 로그인페이지, 상품상세페이지
   ///1-2. 네비게이션바 만들기

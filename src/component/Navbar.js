@@ -29,11 +29,12 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
   };
 
   const menuList = [
-    "여성",
-    "Divided",
-    "남성",
-    "신생아/유아",
+    "Women",
+    "Men",
+    "Baby",
+
     "H&M HOME",
+    "Sport",
     "Sale",
     "지속가능성",
   ];
@@ -42,7 +43,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
     <div>
       <div className="login-button">
         <FontAwesomeIcon icon={faUser} />
-        <div onClick={() => goToLogin()}>
+        <div className="auth" onClick={() => goToLogin()}>
           {authenticate ? "로그아웃" : "로그인"}
         </div>
       </div>
@@ -50,7 +51,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         <img
           onClick={() => goToMain()}
           width={100}
-          src="https://i.pinimg.com/564x/94/8c/7f/948c7f31df5eb63955907221228842d7.jpg"
+          src="https://i.pinimg.com/564x/60/30/0c/60300c52085ba4c70ec47d3183709538.jpg"
           alt="H&M"
         />
       </div>
@@ -73,10 +74,10 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
               </Dropdown.Item>
             ))}
           </DropdownButton>
-        </div>
-        <div className="search-box">
-          <FontAwesomeIcon icon={faSearch} />
-          <input type="text" onKeyDown={(event) => search(event)} />
+          <div className="search-box">
+            <FontAwesomeIcon icon={faSearch} />
+            <input type="text" onKeyDown={(event) => search(event)} />
+          </div>
         </div>
       </div>
     </div>

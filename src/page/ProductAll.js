@@ -37,6 +37,9 @@ const ProductAll = ({ authenticate }) => {
 
   return (
     <div>
+      <div className="span-container">
+        <span>회원 혜택:3만원 이상 무료배송&첫구매10%할인</span>
+      </div>
       <Container>
         <Row>
           {filteredProducts.length > 0 ? (
